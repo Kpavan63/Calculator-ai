@@ -1,0 +1,165 @@
+* {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        
+        :root {
+            --bg-color: #f4f4f4;
+            --text-color: #222;
+            --button-bg: #ddd;
+            --button-hover: #bbb;
+            --button-active: #999;
+            --calc-bg: #fff;
+            --display-bg: #222;
+            --display-color: #fff;
+            --special-btn-bg: #4CAF50;
+            --special-btn-color: white;
+        }
+        
+        .dark-mode {
+            --bg-color: #181818;
+            --text-color: #fff;
+            --button-bg: #333;
+            --button-hover: #555;
+            --button-active: #777;
+            --calc-bg: #242424;
+            --display-bg: #444;
+            --display-color: #ddd;
+            --special-btn-bg: #ff5722;
+        }
+        
+        .calculator {
+            width: 100%;
+            max-width: 400px;
+            background-color: var(--calc-bg);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease;
+        }
+        
+        #display {
+            width: 100%;
+            height: 50px;
+            background-color: var(--display-bg);
+            color: var(--display-color);
+            text-align: right;
+            font-size: 24px;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+        
+        button {
+            width: 100%;
+            padding: 20px;
+            font-size: 18px;
+            background-color: var(--button-bg);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        button:hover {
+            background-color: var(--button-hover);
+        }
+        
+        button:active {
+            background-color: var(--button-active);
+        }
+        
+        button:nth-child(16) {
+            grid-column: span 2;
+        }
+        
+        button:nth-child(19) {
+            background-color: var(--special-btn-bg);
+            color: var(--special-btn-color);
+        }
+        
+        /* Switch styles (From Uiverse.io by WhiteNervosa) */
+        .switch {
+          display: inline-block;
+          vertical-align: middle;
+        }
+        
+        .slider {
+          background-color: #ffffff2b;
+          border-radius: 100px;
+          padding: 1px;
+          margin: 10px;
+          cursor: pointer;
+          transition: box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1) 0s;
+          align-items: center;
+          position: relative;
+          display: block;
+          width: 51px;
+          height: 29px;
+          box-shadow: rgba(0, 0, 0, 0.62) 0px 0px 5px inset, rgba(0, 0, 0, 0.21) 0px 0px 0px 24px inset, #22cc3f 0px 0px 0px 0px inset, rgba(224, 224, 224, 0.45) 0px 1px 0px 0px;
+        }
+        
+        .slider::after {
+          content: "";
+          display: flex;
+          top: 2.3px;
+          left: 2px;
+          width: 26px;
+          height: 26px;
+          background-color: #e3e3e3;
+          border-radius: 200px;
+          position: absolute;
+          box-shadow: transparent 0px 0px 0px 2px, rgba(0, 0, 0, 0.3) 0px 6px 6px;
+          transition: left 300ms cubic-bezier(0.4, 0, 0.2, 1) 0s, background-color 300ms cubic-bezier(0.4, 0, 0.2, 1) 0s;
+          will-change: left, background-color;
+        }
+        
+        .switch input[type="checkbox"]:checked + .slider {
+          box-shadow: rgba(0, 0, 0, 0.62) 0px 0px 5px inset, #22cc3f 0px 0px 0px 2px inset, #22cc3f 0px 0px 0px 24px inset, rgba(224, 224, 224, 0.45) 0px 1px 0px 0px;
+        }
+        
+        .switch input[type="checkbox"]:checked + .slider::after {
+          left: 24px;
+        }
+        
+        .switch input[type="checkbox"] {
+          display: none;
+        }
+        
+        .theme-toggle {
+            margin-bottom: 20px;
+            position: relative;
+            top: -50px;
+            right: -160px;
+        }
+        
+        @media screen and (max-width: 600px) {
+            .calculator {
+                padding: 15px;
+            }
+            button {
+                padding: 15px;
+                font-size: 16px;
+            }
+        }
